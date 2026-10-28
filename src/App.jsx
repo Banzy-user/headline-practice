@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent.jsx';
 import Home from './pages/Home';
 import About from './pages/About';
 import WorkWithUs from './pages/WorkWithUs';
@@ -11,7 +12,7 @@ import ApplyForm from './pages/ApplyForm';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/headline-practice">
       <Header />
       <main className="min-h-screen">
         <Routes>
@@ -25,6 +26,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <CookieConsent />
     </BrowserRouter>
   );
 }

@@ -4,6 +4,13 @@
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #F5F5F5;
-  color: #111111;
+  background-color: #050505;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+.glass-card {
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
