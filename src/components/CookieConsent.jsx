@@ -5,9 +5,7 @@ export default function CookieConsent() {
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie_consent');
-    if (!consent) {
-      setShow(true);
-    }
+    if (!consent) setShow(true);
   }, []);
 
   const handleAccept = () => {
@@ -18,20 +16,21 @@ export default function CookieConsent() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-2xl p-4 md:p-6 z-50">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-gray-700 text-center md:text-left">
-          Мы используем файлы cookie. Оставаясь на сайте, вы подтверждаете, что ознакомлены и принимаете условия{' '}
-          <a href="https://hlcompany.ru/consent" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
-            «Положения об обработке персональных данных»
+    <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-md z-50 animate-fade-in">
+      <div className="glass-card bg-surface/95 p-6 rounded-2xl shadow-2xl">
+        <h3 className="text-white font-bold mb-2">🍪 Мы используем cookie</h3>
+        <p className="text-gray-text text-sm mb-4 leading-relaxed">
+          Оставаясь на сайте, вы принимаете условия{' '}
+          <a href="https://hlcompany.ru/consent" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            Положения об обработке персональных данных
           </a>{' '}
-          и даете согласие на обработку персональных данных метрическими программами.
+          и даете согласие на работу метрических программ.
         </p>
         <button
           onClick={handleAccept}
-          className="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition whitespace-nowrap"
+          className="w-full bg-primary hover:bg-primary-light text-white py-2.5 rounded-lg font-semibold transition-all shadow-glow"
         >
-          Принять
+          Принять и продолжить
         </button>
       </div>
     </div>

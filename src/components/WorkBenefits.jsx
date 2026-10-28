@@ -1,55 +1,32 @@
 export default function WorkBenefits() {
   const benefits = [
-    {
-      number: '1',
-      title: 'Адекватное отношение к сотрудникам',
-      description: 'Наши руководители сами когда-то были программистами. Для нас важны честность, уважение и нормальное человеческое общение.'
-    },
-    {
-      number: '2',
-      title: 'Становись сильным профи',
-      description: 'Реальные задачи и обмен опытом помогают расти, расширять знания и становиться экспертом в своём деле.'
-    },
-    {
-      number: '3',
-      title: 'Инициатива приветствуется',
-      description: 'У нас инициатива не наказуема. Мы поддерживаем идеи и помогаем воплощать их в жизнь.'
-    },
-    {
-      number: '4',
-      title: 'Дружба и уважение',
-      description: 'Мы не просто ходим на работу: создаём атмосферу дружбы, взаимного уважения и общей команды.'
-    }
+    { number: '1', title: 'Адекватное отношение', desc: 'Наши руководители сами когда-то были программистами. Честность и уважение — основа всего.' },
+    { number: '2', title: 'Становись сильным профи', desc: 'Реальные задачи и обмен опытом помогают расти и становиться экспертом в своём деле.' },
+    { number: '3', title: 'Инициатива приветствуется', desc: 'У нас инициатива не наказуема. Мы поддерживаем идеи и помогаем воплощать их в жизнь.' },
+    { number: '4', title: 'Дружба и уважение', desc: 'Мы создаём атмосферу дружбы, взаимного уважения и общей команды, а не просто офис.' }
   ];
 
   return (
-    <section className="bg-gray-950 py-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-12">
-          <p className="text-red-600 text-sm font-bold uppercase tracking-wider mb-3">Работа у нас</p>
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
-            Хорошая работа<br />
-            <span className="text-gray-500">чувствуется в деталях.</span>
+    <section className="py-24 bg-bg relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-hero-glow pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="mb-16 text-center md:text-left">
+          <p className="text-primary text-sm font-bold uppercase tracking-widest mb-4">Работа у нас</p>
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+            Хорошая работа <br />
+            <span className="gradient-text">чувствуется в деталях.</span>
           </h2>
-          <p className="text-gray-400 max-w-md ml-auto">
+          <p className="text-gray-text max-w-xl text-lg">
             Четыре опоры нашего подхода — от задач, которые имеют смысл, до людей, с которыми хочется их решать.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map((benefit) => (
-            <div 
-              key={benefit.number} 
-              className="bg-gray-900 p-8 border border-gray-800 hover:border-red-600/50 transition-all group cursor-pointer"
-            >
-              <span className="text-red-600 text-sm font-bold mb-4 block">{benefit.number}</span>
-              <h3 className="text-xl font-bold text-white mb-4">{benefit.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{benefit.description}</p>
-              <div className="mt-6 text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </div>
+          {benefits.map((b) => (
+            <div key={b.number} className="glass-card p-8 rounded-2xl group cursor-pointer">
+              <span className="text-primary text-4xl font-black mb-6 block opacity-50 group-hover:opacity-100 transition-opacity">{b.number}</span>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{b.title}</h3>
+              <p className="text-gray-text text-sm leading-relaxed">{b.desc}</p>
             </div>
           ))}
         </div>
